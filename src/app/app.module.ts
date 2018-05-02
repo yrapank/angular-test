@@ -7,8 +7,8 @@ import { RegistrationComponent } from '../app/registration/registration.componen
 import {Routes, RouterModule} from '@angular/router';
 import { LoginComponent } from '../app/login/login.component';
 import { MainComponent } from './main/main.component';
-import { SocketService } from './socket.service';
-import { AppService } from './app.service';
+import { SocketService } from './services/socket.service';
+import { AppService } from './services/app.service';
 const appRoutes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'registration', component: RegistrationComponent },

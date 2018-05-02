@@ -3,7 +3,7 @@ import { NgModel} from '@angular/forms';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { User} from '../user';
 import {Router} from '@angular/router';
-import { AppService } from '../app.service';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-registration',

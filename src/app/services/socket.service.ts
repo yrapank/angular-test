@@ -1,5 +1,5 @@
 import { Route } from '@angular/compiler/src/core';
-import { environment } from './../environments/environment';
+import { environment } from '../../environments/environment';
 import { Subject } from 'rxjs/Subject';
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router/src/interfaces';

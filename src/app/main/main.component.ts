@@ -1,15 +1,15 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
-import { AppService } from '../app.service';
+import { AppService } from '../services/app.service';
 import { HttpClient} from '@angular/common/http';
 import { NgModel} from '@angular/forms';
-import { SocketService } from '../socket.service';
+import { SocketService } from '../services/socket.service';
 
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
-}) 
+})
 export class MainComponent implements OnInit {
   privatePushs = [];
   publicPushs = [];

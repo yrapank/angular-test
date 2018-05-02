@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
 import { NgModel} from '@angular/forms';
-import {AppService} from '../app.service';
+import {AppService} from '../services/app.service';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { User} from '../user';
 import { Router } from '@angular/router';

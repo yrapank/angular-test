@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, DoCheck } from '@angular/core';
-import { MainService } from './main.service';
+import { AppService } from '../app.service';
 import { HttpClient} from '@angular/common/http';
 import { NgModel} from '@angular/forms';
 import { SocketService } from '../socket.service';
@@ -8,9 +8,8 @@ import { SocketService } from '../socket.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css'],
-  providers: [ MainService]
-})
+  styleUrls: ['./main.component.css']
+}) 
 export class MainComponent implements OnInit {
   privatePushs = [];
   publicPushs = [];
@@ -25,7 +24,7 @@ export class MainComponent implements OnInit {
   unserAddValue: string;
   addAnswer: any;
   deleteAnswer: any;
- constructor(private mainService: MainService, private http: HttpClient, private socket: SocketService) {
+ constructor(private mainService: AppService, private http: HttpClient, private socket: SocketService) {
   this.socket.privatePush.subscribe(res => {
     this.privatePushs.unshift();
   });

@@ -8,6 +8,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { LoginComponent } from '../app/login/login.component';
 import { MainComponent } from './main/main.component';
 import { SocketService } from './socket.service';
+import { AppService } from './app.service';
 const appRoutes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'registration', component: RegistrationComponent },
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
 @NgModule({
     imports:      [ BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
     declarations: [ AppComponent, RegistrationComponent, LoginComponent, MainComponent],
-    providers:    [SocketService],
+    providers:    [SocketService , AppService],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

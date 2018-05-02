@@ -1,0 +1,36 @@
+<div class="card" *ngFor="let item of publicPushs">
+    <div class="card-header">
+        <span><img src="#" alt="">{{userName}}</span>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <p class="card-text">{{item.message}}</p>
+        <footer class="blockquote-footer">{{item.created_at}}</footer>
+        <button *ngIf="admin==0" class="btn btn-primary" (click)="getAnswer(item.id)">get Answer</button>
+        <button *ngIf="id==item.user_id||admin==1" class="btn btn-primary" (click)="deleteComment(item.id)">delete</button>
+        <div *ngIf="admin==1" class="form-group">
+            <label>answer</label>
+            <input class="form-control" name="titleComment" [(ngModel)]="answerAddValue" />
+            <button class="btn btn-default" (click)="addAnswer(answerAddValue, item.id)">add Answer</button>
+        </div>
+        <div *ngFor="let ans of privatePushs" class="alert alert-danger">
+            {{ans.message}} <button *ngIf="admin==1" class="btn btn-default" (click)="deleteAnswer(item.id, ans.id)">Delete</button> </div>
+    </div>
+</div>
+<div class="col-xs-10">
+    <form>
+        <div class="form-group">
+            <label>title</label>
+            <input class="form-control" name="titleComment" [(ngModel)]="titleComment" #titleUser="ngModel" />
+        </div>
+        <div class="form-group">
+            <label>Comment</label>
+            <textarea class="form-control" name="pass" [(ngModel)]="userComment" #userCom="ngModel" required></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" (click)="addComment(titleUser, userCom )">add Comment</button>
+        </div>
+        <div>
+        </div>
+    </form>
+</div>

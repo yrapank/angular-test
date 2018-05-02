@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
-
+import { Component, Input} from '@angular/core';
+import { SocketService } from './socket.service';
 @Component({
-  selector: 'app-root',
+    selector: 'app-login',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'app';
-}
+  privatePushs = [];
+  publicPushs = [];
+  constructor(private socket: SocketService) {
+    this.socket.privatePush.subscribe(res => {
+      this.privatePushs.unshift({ date: new Date(), data: res });
+    });
+    this.socket.publicPush.subscribe(res => {
+      this.publicPushs.unshift({ date: new Date(), data: res });
+    });
+  }
+ }

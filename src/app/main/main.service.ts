@@ -4,8 +4,8 @@ import { HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class MainService {
-    main = {};
-    unser = [];
+  privatePushs = [];
+  publicPushs = [];
     token = localStorage.getItem('token');
     constructor(private http: HttpClient) {}
     getMain(token) {
